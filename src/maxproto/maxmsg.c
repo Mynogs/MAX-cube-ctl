@@ -336,7 +336,7 @@ void dumpMAXHostpkt(MAX_msg_list* msg_list)
                         if (flags_valid)
                         {
                             int battery;
-                            battery = val & 0b10000000;
+                            battery = (val & 0b10000000) != 0; // battery has to be 0 or 1
                             printf("\tBattery             %s\n",
                                    battery_str[battery]);
                             mode = val & 0b00000011;
